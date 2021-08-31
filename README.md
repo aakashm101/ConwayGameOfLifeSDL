@@ -22,7 +22,7 @@ Source: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
         sudo apt install libsdl2-dev
 2. Compile the source code
 
-        gcc *.c -o conwayGameOfLife $(pkg-config --cflags --libs sdl2)
+        g++ *.cpp -o conwayGameOfLife $(pkg-config --cflags --libs sdl2)
 3. Run the program
 
         ./conwayGameOfLife
