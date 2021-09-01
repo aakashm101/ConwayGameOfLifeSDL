@@ -22,34 +22,7 @@ GameOfLife::GameOfLife(const int p_rows, const int p_cols)
 		}
 		m_board_current_state.push_back(rowVector);
 	}
-
 	m_board_next_state = m_board_current_state;
-}
-
-void GameOfLife::displayCurrentBoardData(void)
-{
-	for (int i = 0; i < m_rows; i++)
-	{
-		for (int j = 0; j < m_cols; j++)
-		{
-			printf("%c", m_board_current_state[i][j] ? 219 : 176);
-		}
-		std::cout << std::endl;
-	}
-	std::cout << std::endl;
-}
-
-void GameOfLife::displayNextBoardData(void)
-{
-	for (int i = 0; i < m_rows; i++)
-	{
-		for (int j = 0; j < m_cols; j++)
-		{
-			std::cout << m_board_next_state[i][j] << ' ';
-		}
-		std::cout << std::endl;
-	}
-	std::cout << std::endl;
 }
 
 void GameOfLife::nextState(void)
@@ -60,7 +33,7 @@ void GameOfLife::nextState(void)
 		for (int j = 0; j < m_cols; j++)
 		{
 			liveNeighbourCount = getNeighbourCount(i, j);
-			if (m_board_current_state[i][j] == true && liveNeighbourCount == 2 || liveNeighbourCount == 3)
+			if (m_board_current_state[i][j] == true && (liveNeighbourCount == 2 || liveNeighbourCount == 3))
 			{
 				m_board_next_state[i][j] = true;
 			}
@@ -75,11 +48,6 @@ void GameOfLife::nextState(void)
 		}
 	}
 	m_board_current_state = m_board_next_state;
-}
-
-std::vector<std::vector<bool>>& GameOfLife::getCurrentBoardState()
-{
-	return m_board_current_state;
 }
 
 int GameOfLife::getNeighbourCount(int row, int col)
@@ -107,4 +75,9 @@ int GameOfLife::getNeighbourCount(int row, int col)
 	}
 
 	return neighbourCount;
+}
+
+bool GameOfLife::getCurrentBoardStateCellValue(int x, int y)
+{
+	return m_board_current_state[x][y];
 }

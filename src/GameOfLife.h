@@ -12,8 +12,6 @@ private:
 	int getNeighbourCount(int i, int j);
 public:
 	GameOfLife(const int p_rows, const int p_cols);
-	void displayCurrentBoardData(void);
-	void displayNextBoardData(void);
 	void nextState(void);
-	std::vector<std::vector<bool>>& getCurrentBoardState();
+	bool getCurrentBoardStateCellValue(int x, int y);
 };
