@@ -31,6 +31,3 @@ Source: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 * 32-bit EXE and DLL for Windows: [Download](https://github.com/aakashm101/ConwayGameOfLifeSDL/tree/main/bin/x86)
 
 * 64-bit EXE and DLL for Windows: [Download](https://github.com/aakashm101/ConwayGameOfLifeSDL/tree/main/bin/x64)
-
-# Roadmap
-* Add more features
