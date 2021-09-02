@@ -45,8 +45,6 @@ SDLController::SDLController(const char* p_windowTitle, int p_cellSize)
 
 void SDLController::updateWindow(void)
 {
-	const int MIN_THRESHOLD = 50;	// Minimum threshold for R,G,B values (Range: 0 to 255)
-
 	SDL_SetRenderDrawColor(m_renderer, 0xFF, 0xFF, 0xFF, 0xFF);	// Use a white background
 	SDL_RenderClear(m_renderer);
 
@@ -63,7 +61,7 @@ void SDLController::updateWindow(void)
 			}
 			else // Else fill white color
 			{
-				SDL_SetRenderDrawColor(m_renderer, 0xFF, 0xFF, 0xFF, 0x00);
+				SDL_SetRenderDrawColor(m_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 				SDL_RenderFillRect(m_renderer, &m_cellRect);
 			}
 
