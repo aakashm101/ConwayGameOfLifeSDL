@@ -45,6 +45,8 @@ SDLController::SDLController(const char* p_windowTitle, int p_cellSize)
 
 void SDLController::updateWindow(void)
 {
+	const int MIN_THRESHOLD = 50;	// Minimum threshold for R,G,B values (Range: 0 to 255)
+
 	SDL_SetRenderDrawColor(m_renderer, 0xFF, 0xFF, 0xFF, 0xFF);	// Use a white background
 	SDL_RenderClear(m_renderer);
 
@@ -61,7 +63,7 @@ void SDLController::updateWindow(void)
 			}
 			else // Else fill white color
 			{
-				SDL_SetRenderDrawColor(m_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+				SDL_SetRenderDrawColor(m_renderer, 0xFF, 0xFF, 0xFF, 0x00);
 				SDL_RenderFillRect(m_renderer, &m_cellRect);
 			}
 
@@ -70,6 +72,19 @@ void SDLController::updateWindow(void)
 		m_cellRect.x += m_cellSize;
 		m_cellRect.y = 0;
 	}
+
+	// Draw the grid lines
+	SDL_SetRenderDrawColor(m_renderer, 0x00, 0x00, 0x00, 0xFF);
+	for (int row = 0; row < m_WindowHeight; row = row + m_cellSize)	// Horizontal lines
+	{
+		SDL_RenderDrawLine(m_renderer, 0, row, m_windowWidth, row);
+	}
+
+	for (int col = 0; col < m_windowWidth; col = col + m_cellSize)	// Vertical lines
+	{
+		SDL_RenderDrawLine(m_renderer, col, 0, col, m_WindowHeight);
+	}
+
 	SDL_RenderPresent(m_renderer);
 }
 
