@@ -8,7 +8,7 @@ A simple graphical simulation of Conway's game of life algorithm using SDL graph
 Source: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 
 # Preview
-<img src="./res/gameOfLife.jpg">
+<img src="./res/gameOfLife.png">
 
 # Build Instructions
 ## Windows
