@@ -8,7 +8,7 @@ int main(void)
 {
 	const int MIN_CELL_SIZE = 5;
 	const int MAX_CELL_SIZE = 25;
-	const int DEFAULT_CELL_SIZE = 8;
+	const int DEFAULT_CELL_SIZE = 10;
 	bool running;
 	int cellSize; // Uses a SDL_Rect of dimensions cellSize*cellSize pixels to render each cell of the simulation on the SDL_Window
 	Uint32 frameDelay;
